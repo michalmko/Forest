@@ -1,0 +1,564 @@
+@import 'colors';
+@import 'mixins';
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+	scroll-padding-top: 100px;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+}
+
+a {
+	text-decoration: none;
+	color: $black-color;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1400px;
+}
+
+.nav {
+	position: fixed;
+	height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 1);
+	z-index: 100;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		max-width: 1400px;
+	}
+
+	&__logo {
+		padding: 0.5em 0.8em;
+		font-size: 4rem;
+		a {
+			position: relative;
+			&::after {
+				@include linkAnimation;
+			}
+			&:hover::after {
+				@include linkAnimationHover;
+			}
+		}
+
+		i {
+			color: $dark-color;
+		}
+	}
+
+	&__items {
+		position: absolute;
+		top: 100px;
+		left: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		font-size: 2rem;
+		background-color: rgba(255, 255, 255, 1);
+		transition: transform 0.3s;
+	}
+
+	&__items--active {
+		transform: translateX(-100%);
+	}
+
+	&__item {
+		padding: 1em 1.5em;
+		min-width: 90px;
+		transition: color 0.5s, background-color 0.5s;
+		&:hover {
+			background-color: $black-color;
+			color: $white-color;
+		}
+		&--active {
+			background-color: $black-color;
+			color: $white-color;
+		}
+	}
+
+	.burger-btn {
+		padding: 1em 1.8em;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		&--active .burger-btn__bars::before {
+			transform: translateY(8px) rotate(-45deg);
+		}
+		&--active .burger-btn__bars::after {
+			transform: translateY(-8px) rotate(45deg);
+		}
+		&--active .burger-btn__bars {
+			background-color: transparent;
+		}
+
+		&__box {
+			position: relative;
+			height: 20px;
+			width: 30px;
+		}
+		&__bars,
+		&__bars::after,
+		&__bars::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background-color: black;
+			transition: 0.5s transform;
+		}
+
+		&__bars {
+			top: 50%;
+			transform: translateY(-50%);
+
+			&::before {
+				top: -8px;
+			}
+			&::after {
+				top: 8px;
+			}
+		}
+	}
+}
+
+.header {
+	height: 370px;
+	.hero-bg {
+		@include heroImages('../../dist/img/jungle-1807476_640.jpg');
+	}
+	.hero-text {
+		position: absolute;
+		// width: 100%;
+		top: 55%;
+		left: 4%;
+		color: $white-color;
+		&__quote {
+			font-size: 1.5rem;
+		}
+
+		&__sentence {
+			font-weight: bold;
+			font-size: 2.2rem;
+		}
+	}
+}
+
+.section {
+	padding: 0 1.5em;
+	&__heding {
+		margin: 1.5em 0 1em;
+		text-transform: uppercase;
+		font-weight: 200;
+		font-size: 4rem;
+		letter-spacing: 0.1em;
+		text-align: center;
+	}
+	&__text-centered {
+		padding: 0 1em 1.5em;
+		font-size: 2.2rem;
+		text-align: center;
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 2em;
+	}
+
+	&__text {
+		h2 {
+			font-size: 2.5rem;
+			padding: 1em 0;
+		}
+		p {
+			font-weight: 200;
+			font-size: 1.5rem;
+			line-height: 3rem;
+		}
+	}
+}
+
+.hero-section {
+	height: 250px;
+	.hero-bg {
+		// background-image: $hero-shadow, url();
+		@include heroImages('../../dist/img/girl-5785590_640.jpg');
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.hero-text {
+		display: block;
+		position: absolute;
+		max-width: 90%;
+		padding: 0.5em 1em;
+		color: $white-color;
+		font-size: 2.5rem;
+		font-weight: bold;
+		text-align: center;
+		letter-spacing: 0.2em;
+		border: 1.5px solid $white-color;
+	}
+}
+
+.section {
+	&__cards {
+		display: flex;
+		align-self: center;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2em 2em;
+		margin: 2em 1em;
+		box-shadow: 0px 0px 15px $grey-color;
+		border-radius: 5px;
+		transition: scale 0.3s;
+		min-width: 330px;
+
+		.card-title {
+			font-size: 2.8rem;
+		}
+		.card-price {
+			padding: 0.5em 0;
+			font-size: 3.5rem;
+			font-weight: bold;
+			.fa-solid {
+				font-size: 4rem;
+			}
+		}
+		.card-items {
+			list-style: none;
+			padding: 1em;
+		}
+		.card-item {
+			line-height: 1.8em;
+			color: $grey-color;
+			&--active {
+				color: $black-color;
+			}
+			.fa-check {
+				color: $active-color;
+			}
+		}
+
+		.card-btn {
+			width: 90%;
+			padding: 0.5em 2em;
+			margin-top: 1.5em;
+			@include formElement;
+			cursor: pointer;
+			transition: color 0.3s, background-color 0.3s;
+			&--active {
+				color: $black-color;
+				background-color: $active-color;
+				box-shadow: 0px 0px 10px $active-color;
+			}
+		}
+
+		.card-btn:hover {
+			@include btnHover;
+		}
+		.card-btn--active:hover {
+			background-color: rgb(24, 194, 24);
+		}
+	}
+	&__card:hover {
+		scale: 1.05;
+	}
+}
+
+.contact {
+	&__form {
+		display: flex;
+		flex-direction: column;
+		// padding: 1em 0.5em;
+		font-size: 1.8rem;
+		color: $dark-color;
+	}
+	&__input {
+		margin-bottom: 2em;
+		padding: 0.5em;
+
+		@include formElement;
+	}
+	&__label {
+		margin-bottom: 0.3em;
+	}
+
+	&__text-area{
+		@include formElement;
+		max-width: 100%;
+		min-height: 4rem;
+		padding: 0.5rem;
+	}
+
+	&__btn {
+		// width: 40%;
+		margin: 2em 0em;
+		margin-bottom: 4em;
+		padding: 0.5em 3em;
+		align-self: center;
+		font-size: 1.8rem;
+		cursor: pointer;
+		@include formElement;
+		&:hover{
+			@include btnHover;
+		}	
+	}
+
+	&__map-box {
+		border-radius: 10px;
+		overflow: hidden;
+		// margin: 0em 5em;
+		margin-top: -1em;
+		margin-bottom: 3em;
+	}
+
+}
+
+.footer {
+	a {
+		position: relative;
+		&::after {
+			@include linkAnimation;
+		}
+		&:hover::after {
+			@include linkAnimationHover;
+		}
+	}
+	background-color: $light-color;
+	&__top {
+		display: flex;
+		flex-direction: column;
+	}
+	&__logo {
+		width: 100%;
+		padding: 0.6em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3.2rem;
+		font-weight: 200;
+		i {
+			color: $dark-color;
+		}
+	}
+	&__menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+		padding: 1em;
+		width: 100%;
+	}
+	&__menu-item {
+		padding: 0.5em;
+
+	}
+
+	&__menu-title {
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin-bottom: 0.4em;
+	}
+	&__list-item {
+		margin-bottom: 0.2em;
+		font-size: 1.3rem; 
+		list-style: none;
+		a {
+			color: $grey-color;
+		}
+		
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+		border-top: 1px solid $black-color;
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		height: 470px;
+		.hero-bg {
+			.hero-text {
+				&__quote {
+					font-size: 2rem;
+				}
+
+				&__sentence {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+	.footer {
+		&__menu {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+		&__menu-item {
+			min-width: 200px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		.burger-btn {
+			display: none;
+		}
+		&__items {
+			position: static;
+			flex-direction: row;
+			width: auto;
+			height: 100%;
+			transform: translateX(0%);
+			background-color: transparent;
+		}
+		&__item {
+			display: flex;
+			align-items: center;
+			justify-content: end;
+			height: 100%;
+		}
+	}
+
+	.header {
+		.hero-bg {
+			@include heroImages('../../dist/img/jungle-1807476_1920.jpg');
+		}
+	}
+
+	.section {
+		&__body {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 6em;
+		}
+
+		&__text-centered {
+			font-size: 2.8rem;
+		}
+		&__text {
+			padding: 0 3em;
+			width: 120%;
+
+			h2 {
+				padding: 0 0 1em 0;
+			}
+			p {
+				font-size: 1.6rem;
+			}
+		}
+		&__img {
+			padding: 0 1em;
+			content: url('../../dist/img/waters-3095682_1920.jpg');
+			width: 80%;
+			object-fit: cover;
+			max-height: 350px;
+		}
+	}
+
+	.hero-section {
+		.hero-bg {
+			@include heroImages('../../dist/img/girl-5785590_1920.jpg');
+		}
+		.hero-text {
+			padding: 1em 2em;
+			font-size: 3rem;
+		}
+	}
+
+
+}
+
+@media (min-width: 992px) {
+	.header {
+		.hero-bg {
+			.hero-text {
+				left: 15%;
+				&__quote {
+					font-size: 3rem;
+				}
+
+				&__sentence {
+					font-size: 4.2rem;
+				}
+			}
+		}
+	}
+
+	.section {
+		&__text {
+			width: 100%;
+		}
+		&__img {
+			width: 100%;
+		}
+	}
+
+	.hero-section {
+		height: 390px;
+		.hero-text {
+			font-size: 3.6rem;
+		}
+	}
+	.footer {
+		&__top {
+			flex-direction: row;
+		}
+
+		&__logo {
+			width: 45%;
+			font-size: 4rem;
+		}
+		&__menu {
+			flex-direction: row;
+			text-align: left;
+		}
+		&__menu-item {
+			padding: 1.5em;
+			min-width: 230px;
+		}
+	
+		&__menu-title {
+			font-size: 2rem;
+			margin-bottom: 1em;
+		}
+		&__list-item {
+			margin-bottom: 1em;
+			font-size: 1.5rem;
+		}
+	
+		&__bottom {
+			font-size: 2rem;
+		}
+	}
+}

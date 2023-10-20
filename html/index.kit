@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest</title>
+    <script src="https://kit.fontawesome.com/1e9fa7a4f6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200 ;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/css/main.min.css">
+</head>
+
+<body>
+
+    <!-- @include 'nav.kit' -->
+
+    <header id="home" class="header">
+        <div class="hero-bg">
+            <div class="wrapper">
+                <div class="hero-text">
+                    <p class="hero-text__quote">Forest Gump</p>
+                    <p class="hero-text__sentence">Najpiękniejszy park w Twojej okolicy!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <section id="aboutus" class="section">
+            <h1 class="section__heding">O nas</h1>
+            <div class="section__body">
+                <img class="section__img" src="../dist/img/waters-3095682_640.jpg"
+                    alt="mała kamienna wyspa na jeziorze">
+                <div class="section__text">
+                    <h2>Niezapomniane przygody</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium tempore maiores nulla
+                        assumenda culpa recusandae magni, accusamus ipsam fugit officiis, autem unde enim amet quas
+                        inventore quibusdam, molestiae ratione ullam? Nemo odio, quo magni corporis porro debitis,
+                        reprehenderit natus soluta perspiciatis voluptatum quibusdam libero sed asperiores tempora
+                        facere praesentium qui deserunt ad repellat enim eius! Labore cum ratione sed! Ex mollitia
+                        aspernatur consectetur accusantium voluptatibus ipsam quam laboriosam enim ad?</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-bg">
+            <p class="hero-text">Przygoda dla całej rodziny!</p>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <section id="offer" class="section">
+            <h1 class="section__heding">oferta</h1>
+
+            <p class="section__text-centered">Wybierz jedną z naszych wspaniałych ofert!</p>
+
+            <div class="section__cards">
+
+                <div class="section__card">
+                    <div class="card-title">Demo</div>
+                    <div class="card-price"><i class="fa-solid fa-dollar-sign"></i>0</div>
+                    <div class="card-options">
+                        <ul class="card-items">
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                            <li class="card-item"><i class="fa-solid fa-minus"></i> opcja poza pakietem</li>
+                            <li class="card-item"><i class="fa-solid fa-minus"></i> opcja poza pakietem</li>
+                            <li class="card-item"><i class="fa-solid fa-minus"></i> opcja poza pakietem</li>
+                        </ul>
+                    </div>
+                    <button class='card-btn'>Wybierz</button>
+                </div>
+
+                <div class="section__card">
+                    <div class="card-title">Standard</div>
+                    <div class="card-price"><i class="fa-solid fa-dollar-sign"></i>99</div>
+                    <div class="card-options">
+                        <ul class="card-items">
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> strzelanie do
+                                dzików
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> jedzenie dziczyzny
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> kraftowe piwo
+                            </li>
+                            <li class="card-item"><i class="fa-solid fa-minus"></i> snowbord</li>
+                            <li class="card-item"><i class="fa-solid fa-minus"></i> VR Plants vs Zombies </li>
+                        </ul>
+                    </div>
+                    <button class='card-btn card-btn--active'>Wybierz</button>
+                </div>
+
+                <div class="section__card">
+                    <div class="card-title">Premium</div>
+                    <div class="card-price"><i class="fa-solid fa-dollar-sign"></i>299</div>
+                    <div class="card-options">
+                        <ul class="card-items">
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                            <li class="card-item card-item--active"><i class="fa-solid fa-check"></i> opcia w pakiecie
+                            </li>
+                        </ul>
+                    </div>
+                    <button class='card-btn'>Wybierz</button>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <div class="wrapper">
+        <section id="contact" class="section contact">
+            <h1 class="section__heding">Kontakt</h1>
+            <form action="" class="contact__form">
+
+                <label for="name" class="contact__label">Imie i nazwisko:</label>
+                <input type="text" id="name" class="contact__input">
+
+                <label for="email" class="contact__label">Adres e-mail:</label>
+                <input type="text" id="email" class="contact__input">
+
+                <label for="msg" class="contact__label">Wiadomość:</label>
+                <textarea name="msg" id="" cols="30" rows="10" class="contact__text-area"></textarea>
+                <button class="contact__btn">Wyślij</button>
+
+            </form>
+
+            <p class="section__text-centered">Odwiedź nas</p>
+
+            <div class="contact__map-box">
+                <iframe class="contact__map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.8978424941183!2d19.892849199999997!3d50.088199499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a2d7f0d587f%3A0x15f4e7c36adff6d2!2sJasnog%C3%B3rska%202%2C%2031-358%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1697659650907!5m2!1spl!2spl"
+                    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__top">
+                <div class="footer__logo">
+                    <p><a href="#"><i class="fa-solid fa-tree"></i> Forest </a></p>
+                </div>
+                <div class="footer__menu">
+                    <div class="footer__menu-item">
+                        <div class="footer__menu-title"><a href="#aboutus">O Nas</a></div>
+                        <ul class="footer__menu-list">
+                            <li class="footer__list-item"><a href="">Historia</a></li>
+                            <li class="footer__list-item"><a href="">Parki</a></li>
+                            <li class="footer__list-item"><a href="">Opinie</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-item">
+                        <div class="footer__menu-title"><a href="">Nasza Firma</a></div>
+                        <ul class="footer__menu-list">
+                            <li class="footer__list-item"><a href="">Praca</a></li>
+                            <li class="footer__list-item"><a href="">Kadry</a></li>
+                            <li class="footer__list-item"><a href="">Zarząd</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-item">
+                        <div class="footer__menu-title"><a href="">Dokumenty</a></div>
+                        <ul class="footer__menu-list">
+                            <li class="footer__list-item"><a href="">Wnioski</a></li>
+                            <li class="footer__list-item"><a href="">Rezerwację</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; <span class="footer__year"></span> Forest Group Company Ltd.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="../dist/js/main.min.js"></script>
+</body>
+
+</html>
